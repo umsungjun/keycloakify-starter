@@ -1,0 +1,89 @@
+.kcHeaderClass,
+.kcFormHeaderClass,
+.kcSignUpClass,
+.kcFormGroupClass.kcFormSettingClass {
+    display: none;
+}
+
+.kcBodyClass {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+#kc-content-wrapper {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+}
+
+#kc-form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kcFormGroupClass input {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    box-sizing: border-box;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+.kcFormGroupClass input[type="submit"] {
+    background-color: var(--winiGreen);
+    color: var(--white);
+}
+
+.linkWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkWrapper .sns {
+    display: flex;
+    gap: 7px;
+}
+
+.linkWrapper .autowini {
+    display: flex;
+    gap: 7px;
+}
+
+.linkWrapper .autowini a {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rounded-full);
+    font-size: var(--text-sm);
+    color: var(--grey300);
+    border: 1px solid var(--grey300);
+}
+
+.auctionLink {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auctionLink img {
+    width: 150px;
+}
+
+#input-error {
+    display: inline-block;
+    margin-top: 0.25rem;
+    color: var(--red500);
+}
