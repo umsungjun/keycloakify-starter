@@ -1,0 +1,273 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+/* 디자인 토큰 관련 문서
+  https://autowini.atlassian.net/wiki/spaces/ADV/pages/781484066
+*/
+
+:root {
+    /* Font Sizes (Tailwind) */
+    --text-xxs: 0.625rem; /* 10px */
+    --text-xs: 0.75rem; /* 12px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-base: 1rem; /* 16px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-xl: 1.25rem; /* 20px */
+    --text-2xl: 1.5rem; /* 24px */
+    --text-3xl: 1.875rem; /* 30px */
+    --text-4xl: 2.25rem; /* 36px */
+
+    /* Font Weights (Tailwind) */
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+    /* Border Radius (Tailwind) */
+    --rounded-sm: 2px;
+    --rounded: 4px;
+    --rounded-md: 6px;
+    --rounded-lg: 8px;
+    --rounded-xl: 12px;
+    --rounded-2xl: 16px;
+    --rounded-full: 9999px;
+
+    /* Shadows (Tailwind) */
+    --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    --shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    /* Colors (grey 제외 Tailwind) */
+    --white: #fff;
+    --black: #000;
+    --grey90: #f7f9fa; /* 신규 */
+    --grey100: #f4f4f5;
+    --grey110: #f4f7fa; /* 신규 */
+    --grey120: #e4eaef; /* 신규 */
+    --grey130: #d8dde1; /* 신규 */
+    --grey140: #c1c6c9; /* 신규 */
+    --grey200: #e4e4e7;
+    --grey300: #d4d4d8;
+    --grey400: #a1a1aa;
+    --grey410: #999ea2; /* 신규 */
+    --grey420: #92979b; /* 신규 */
+    --grey440: #707578; /* 신규 */
+    --grey460: #45484b; /* 신규 */
+    --grey480: #112944; /* 신규 */
+    --grey490: #202f38; /* 신규 */
+    --grey500: #71717a;
+    --grey600: #52525b;
+    --grey700: #3f3f46;
+    --grey800: #27272a;
+    --grey900: #18181b;
+    --grey950: #0c0d0e; /* 신규 */
+
+    --blue50: #eff6ff;
+    --blue100: #dbeafe;
+    --blue200: #bfdbfe;
+    --blue300: #93c5fd;
+    --blue400: #60a5fa;
+    --blue500: #3b82f6;
+    --blue600: #2563eb;
+    --blue700: #1d4ed8;
+    --blue800: #1e40af;
+    --blue900: #1e3a8a;
+
+    --red50: #fef2f2;
+    --red100: #fee2e2;
+    --red110: #fff3f3; /* 신규 */
+    --red200: #fecaca;
+    --red300: #fca5a5;
+    --red400: #f87171;
+    --red500: #ef4444;
+    --red520: #da334f; /* 신규 */
+    --red550: #d10023; /* 신규 */
+    --red600: #dc2626;
+    --red700: #b91c1c;
+    --red800: #991b1b;
+    --red900: #7f1d1d;
+
+    --orange50: #fff7ed;
+    --orange100: #ffedd5;
+    --orange110: #fff7df; /* 신규 */
+    --orange200: #fed7aa;
+    --orange300: #fdba74;
+    --orange400: #fb923c;
+    --orange500: #f97316;
+    --orange550: #dc8e19; /* 신규 */
+    --orange600: #ea580c;
+    --orange700: #c2410c;
+    --orange800: #9a3412;
+    --orange900: #7c2d12;
+
+    --yellow50: #fefce8;
+    --yellow100: #fef9c3;
+    --yellow200: #fef08a;
+    --yellow300: #fde047;
+    --yellow400: #facc15;
+    --yellow500: #eab308;
+    --yellow600: #ca8a04;
+    --yellow700: #a16207;
+    --yellow800: #854d0e;
+    --yellow900: #713f12;
+
+    --green50: #f0fdf4;
+    --green100: #dcfce7;
+    --green110: #f3f9ed; /* 신규 */
+    --green200: #bbf7d0;
+    --green300: #86efac;
+    --green400: #4ade80;
+    --green500: #22c55e;
+    --green550: #45a70d; /* 신규 */
+    --green600: #16a34a;
+    --green700: #15803d;
+    --green800: #166534;
+    --green900: #14532d;
+
+    --teal50: #f0fdfa;
+    --teal100: #ccfbf1;
+    --teal200: #99f6e4;
+    --teal300: #5eead4;
+    --teal400: #2dd4bf;
+    --teal500: #14b8a6;
+    --teal600: #0d9488;
+    --teal700: #0f766e;
+    --teal800: #115e59;
+    --teal900: #134e4a;
+
+    --purple50: #faf5ff;
+    --purple100: #f3e8ff;
+    --purple200: #e9d5ff;
+    --purple300: #d8b4fe;
+    --purple400: #c084fc;
+    --purple500: #a855f7;
+    --purple600: #9333ea;
+    --purple700: #7e22ce;
+    --purple800: #6b21a8;
+    --purple900: #581c87;
+
+    --winiGreen: #00ab68; /* 오토위니 대표 컬러 */
+    --partBlue: #00348e; /* 파츠위니 대표 컬러 */
+    --greyBackground: #f2f4f6;
+    --lightGreyBackground: #fbfbfb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    max-height: 1000000px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: top;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: "Roboto", "Noto Sans KR", "AppleGothic", Dotum, sans-serif;
+}
+body {
+    font-weight: normal;
+    color: #0c0d0e;
+    line-height: 1.4;
+}
+img,
+fieldset {
+    border: 0;
+    vertical-align: top;
+}
+ul,
+ol,
+li,
+dl {
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-size: 100%;
+    font-weight: var(--font-medium);
+}
+hr {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+em,
+i,
+address {
+    font-style: normal;
+    font-weight: normal;
+}
+legend,
+caption {
+    display: none;
+    clear: both;
+}
+input,
+input:focus {
+    outline: none;
+}
+input[type="checkbox"] {
+    cursor: pointer;
+}
+textarea,
+select,
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+table {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    vertical-align: top;
+    outline: 0 none;
+}
+section,
+nav,
+article,
+aside,
+hgroup,
+header,
+footer {
+    display: block;
+}
+textarea,
+input {
+    background: url(none);
+    -webkit-border-radius: 1px;
+    -webkit-appearance: none;
+    vertical-align: top;
+}
+label {
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th,
+td {
+    vertical-align: middle;
+}
+b,
+strong,
+.bold,
+.strong {
+    font-weight: bold;
+}
