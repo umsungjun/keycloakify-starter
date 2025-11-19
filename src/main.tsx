@@ -1,19 +1,19 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 import { KcPage } from "./kc.gen";
+import "./index.css";
 
-// The following block can be uncommented to test a specific page with `yarn dev`
-// Don't forget to comment back or your bundle size will increase
-/*
-import { getKcContextMock } from "./login/KcPageStory";
+// 다음 블록을 주석 해제하면 `yarn dev`로 특정 페이지를 테스트할 수 있습니다
+// 번들 크기 증가를 방지하려면 테스트 후 다시 주석 처리하는 것을 잊지 마세요
 
-if (import.meta.env.DEV) {
-    window.kcContext = getKcContextMock({
-        pageId: "register.ftl",
-        overrides: {}
-    });
-}
-*/
+// import { getKcContextMock } from "./login/KcPageStory";
+
+// if (import.meta.env.DEV) {
+//     window.kcContext = getKcContextMock({
+//         pageId: "login.ftl",
+//         overrides: {}
+//     });
+// }
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
